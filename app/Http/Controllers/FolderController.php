@@ -12,7 +12,7 @@ class FolderController extends Controller
         // Mengambil semua data folder dari database
         $folders = Folder::all()->map(function ($folder) {
             // Mapping warna dan gambar berdasarkan nama atau ID
-            $folder->color = match($folder->name) {
+            $folder->color = match($folder->folder_name) {
                 'SDM' => '#A0D683',
                 'CD Traksi' => '#FFD93D',
                 'TUK' => '#FF8D29',
@@ -23,7 +23,7 @@ class FolderController extends Controller
                 default => '#E8EAE6'
             };
 
-            $folder->image_url = match($folder->name) {
+            $folder->image_url = match($folder->folder_name) {
                 'SDM' => '/img/sdm.jpg',
                 'CD Traksi' => '/img/cdtraksi.jpg',
                 'TUK' => '/img/tuk.jpg',
@@ -47,7 +47,7 @@ class FolderController extends Controller
         $folder = Folder::findOrFail($id);
 
         // Menentukan warna dan gambar untuk folder yang ditampilkan berdasarkan nama
-        $folder->color = match($folder->name) {
+        $folder->color = match($folder->folder_name) {
             'SDM' => '#A0D683',
             'CD Traksi' => '#FFD93D',
             'TUK' => '#FF8D29',
@@ -58,7 +58,7 @@ class FolderController extends Controller
             default => '#E8EAE6'
         };
 
-        $folder->image_url = match($folder->name) {
+        $folder->image_url = match($folder->folder_name) {
             'SDM' => asset('img/sdm.jpg'),
             'CD Traksi' => asset('img/cdtraksi.jpg'),
             'TUK' => asset('img/tuk.jpg'),

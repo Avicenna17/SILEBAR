@@ -9,7 +9,7 @@ class Folder extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'user_id']; // Tambahkan user_id sebagai foreign key
+    protected $fillable = ['folder_name', 'user_id']; // Tambahkan user_id sebagai foreign key
 
     // Relasi antara Folder dan File
     public function files()

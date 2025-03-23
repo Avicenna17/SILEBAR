@@ -17,7 +17,7 @@
                         <header class="card-header" style="background-color: {{ $folder->color }}; border-radius: 7px 7px 0 0;">
                             <p class="card-header-title">
                                 <span class="icon"><i class="mdi mdi-folder"></i></span>
-                                {{ $folder->name }}
+                                {{ $folder->folder_name }}
                             </p>
                         </header>
                         <div class="card-content" style="background: url('{{ $folder->image_url }}') no-repeat center center; background-size: cover; height: 100px;">

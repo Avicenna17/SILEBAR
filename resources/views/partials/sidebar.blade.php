@@ -27,7 +27,7 @@
             </li>
         </ul>
     </div>
-    
+
         <ul class="menu-list">
             <li class="{{ request()->routeIs('logout') ? 'active' : '' }}">
             <form action="{{ route('logout') }}" method="POST" style="display: inline;">
